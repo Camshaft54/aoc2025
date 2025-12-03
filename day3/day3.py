@@ -1,5 +1,6 @@
 import math
 import os
+from collections import defaultdict
 
 # file = open('test.txt').read()
 file = open('input.txt').read()
@@ -28,6 +29,14 @@ def max_jolts_n(memo, bank, start, n):
         max_seen = max(max_seen,  bank[i] * (10**(n-1)) + memo[(i + 1, n - 1)])
     return max_seen
 
+def max_jolts_dp(bank, n):
+    t = defaultdict(lambda: -1)
+    t[0] = 0
+    for end_digit in bank:
+        for start in range(n, -1, -1):
+            if t[start - 1] != -1:
+                t[start] = max(end_digit + 10 * t[start - 1], t[start])
+    return t[n]
 
 def part1():
     jolts_sum = 0
@@ -39,7 +48,7 @@ def part1():
 def part2():
     jolts_sum = 0
     for bank in nums:
-        jolts_sum += max_jolts_n({}, bank, 0, 12)
+        jolts_sum += max_jolts_dp(bank, 12)
     print("Part 2:", jolts_sum)
 
 
