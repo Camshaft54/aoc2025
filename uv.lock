@@ -6,3 +6,18 @@ requires-python = ">=3.13"
 name = "aoc2025"
 version = "0.1.0"
 source = { virtual = "." }
+dependencies = [
+    { name = "pytreemap" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "pytreemap", specifier = ">=0.6" }]
+
+[[package]]
+name = "pytreemap"
+version = "0.6"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/aa/e9/3721fab3eac7641fa204e68ba2f43aa70e5c915042713421b142c1bd8e49/pytreemap-0.6.tar.gz", hash = "sha256:978af6c477a319bace967a4f8f0739ee22da9d8889ba3b8a94923c0aeb5ee900", size = 22608, upload-time = "2024-10-09T16:28:57.023Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/fe/e5/7b129586595894a6118dd0014d674561fc932394dd532881ad0ab19a15b5/pytreemap-0.6-py3-none-any.whl", hash = "sha256:9824d7406ba6158ee9877bf8d7651504565beff5a9ccca1a77d9eed41874faba", size = 32567, upload-time = "2024-10-09T16:28:55.86Z" },
+]
