@@ -4,6 +4,8 @@ version = "0.1.0"
 description = "Advent of Code 2025"
 requires-python = ">=3.13"
 dependencies = [
+    "matplotlib>=3.10.7",
     "networkx>=3.6",
     "pytreemap>=0.6",
+    "shapely>=2.1.2",
 ]
